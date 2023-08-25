@@ -4,7 +4,7 @@ namespace TP_TDDLibrary
 {
     public class RechercheVille
     {
-        private List<String> villes = new List<String>(new String[] {"Valenciennes", "Vancouver"});
+        private List<String> villes = new List<String>(new String[] {"Valenciennes", "Vancouver", "Budapest"});
 
         public List<String> Rechercher(String mot)
         {
@@ -13,7 +13,7 @@ namespace TP_TDDLibrary
             {
                 return villes.FindAll(s => {
                     s = s.ToLower();
-                    return s.StartsWith(mot.ToLower());
+                    return s.Contains(mot.ToLower());
                     });
             }
         }
