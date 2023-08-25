@@ -30,5 +30,14 @@ namespace TP_TDD.Test
             List<string> expected = new List<string>(new string[] { "Valenciennes", "Vancouver" });
             CollectionAssert.AreEquivalent(expected, rechercheVille.Rechercher(mot));
         }
+
+        [TestMethod]
+        public void Test_ReturnVilleFromPartOfName()
+        {
+            RechercheVille rechercheVille = new RechercheVille();
+            string mot = "ape";
+            List<string> expected = new List<string>(new string[] { "Budapest" });
+            CollectionAssert.AreEquivalent(expected, rechercheVille.Rechercher(mot));
+        }
     }
 }
