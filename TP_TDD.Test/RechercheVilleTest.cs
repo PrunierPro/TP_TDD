@@ -9,8 +9,17 @@ namespace TP_TDD.Test
         public void WhenMotLength_LessThan2_Then_NotFoundException()
         {
             RechercheVille rechercheVille = new RechercheVille();
-            string query = "a";
-            Assert.ThrowsException<NotFoundException>(() => rechercheVille.Rechercher(query));
+            string mot = "a";
+            Assert.ThrowsException<NotFoundException>(() => rechercheVille.Rechercher(mot));
+        }
+
+        [TestMethod]
+        public void WhenMotLength_MoreOrEqual2_Then_ReturnVillesBeginningWithMot()
+        {
+            RechercheVille rechercheVille = new RechercheVille();
+            string mot = "Va";
+            List<string> expected = new List<string>(new string[] { "Valenciennes", "Vancouver" });
+            CollectionAssert.AreEquivalent(expected, rechercheVille.Rechercher(mot));
         }
     }
 }
