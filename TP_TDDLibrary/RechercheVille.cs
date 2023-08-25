@@ -1,4 +1,6 @@
-﻿namespace TP_TDDLibrary
+﻿using System.Runtime.Serialization;
+
+namespace TP_TDDLibrary
 {
     public class RechercheVille
     {
@@ -6,8 +8,14 @@
 
         public List<String> Rechercher(String mot)
         {
-            throw new NotImplementedException();
+            if (mot.Length < 2) throw new NotFoundException();
+            else throw new NotImplementedException();
         }
+
+    }
+
+    public class NotFoundException : Exception
+    {
 
     }
 }

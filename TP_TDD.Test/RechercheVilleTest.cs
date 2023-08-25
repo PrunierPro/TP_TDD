@@ -9,7 +9,7 @@ namespace TP_TDD.Test
         public void WhenMotLength_LessThan2_Then_NotFoundException()
         {
             RechercheVille rechercheVille = new RechercheVille();
-            string query = "hi";
+            string query = "a";
             Assert.ThrowsException<NotFoundException>(() => rechercheVille.Rechercher(query));
         }
     }
