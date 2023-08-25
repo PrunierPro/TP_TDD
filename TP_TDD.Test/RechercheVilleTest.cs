@@ -39,5 +39,14 @@ namespace TP_TDD.Test
             List<string> expected = new List<string>(new string[] { "Budapest" });
             CollectionAssert.AreEquivalent(expected, rechercheVille.Rechercher(mot));
         }
+
+        [TestMethod]
+        public void Test_MotAsterisk_ShouldReturnAll()
+        {
+            RechercheVille rechercheVille = new RechercheVille();
+            string mot = "*";
+            List<string> expected = new List<string>(new string[] { "Valenciennes", "Vancouver", "Budapest", "Madrid", "Paris", "Tokyo" });
+            CollectionAssert.AreEquivalent(expected, rechercheVille.Rechercher(mot));
+        }
     }
 }
