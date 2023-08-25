@@ -21,5 +21,14 @@ namespace TP_TDD.Test
             List<string> expected = new List<string>(new string[] { "Valenciennes", "Vancouver" });
             CollectionAssert.AreEquivalent(expected, rechercheVille.Rechercher(mot));
         }
+
+        [TestMethod]
+        public void Test_CaseInsensitive()
+        {
+            RechercheVille rechercheVille = new RechercheVille();
+            string mot = "vA";
+            List<string> expected = new List<string>(new string[] { "Valenciennes", "Vancouver" });
+            CollectionAssert.AreEquivalent(expected, rechercheVille.Rechercher(mot));
+        }
     }
 }
