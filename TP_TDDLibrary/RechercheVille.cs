@@ -11,7 +11,10 @@ namespace TP_TDDLibrary
             if (mot.Length < 2) throw new NotFoundException();
             else
             {
-                return villes.FindAll(s => s.StartsWith(mot));
+                return villes.FindAll(s => {
+                    s = s.ToLower();
+                    return s.StartsWith(mot.ToLower());
+                    });
             }
         }
 
